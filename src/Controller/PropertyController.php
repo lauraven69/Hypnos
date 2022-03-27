@@ -25,9 +25,6 @@ class PropertyController extends AbstractController
     #[Route('/properties', name: 'app_property')]
     public function index(): Response
     {
-        $property = $this->repository->findAllVisible();
-        dump($property);
-
         return $this->render('property/index.html.twig', [
             'current_menu' => 'properties',
         ]);

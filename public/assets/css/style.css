@@ -9,10 +9,10 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Poppins", sans-serif;
   color: #faf8f3;
   background: #131313;
   font-style: italic;
+  font-family: "Poppins", serif;
 }
 
 h1,

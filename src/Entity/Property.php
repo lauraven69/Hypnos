@@ -121,6 +121,12 @@ class Property
      */
     private $price;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Dites dans quel département se trouve l'établissement.")
+     */
+    private $country;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -317,6 +323,18 @@ class Property
     public function setPrice(int $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(string $country): self
+    {
+        $this->country = $country;
 
         return $this;
     }
