@@ -15,9 +15,22 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Property
 {
-    use Timestampable;
+    const TYPE = [
+        0 => 'Suite classique',
+        1 => 'Suite panoramique',
+        2 => 'Suite présidentielle',
+    ];
+
+    const STATUS = [
+        0 => 'Libre',
+        1 => 'Réservé',
+    ];
+
+    use  Timestampable;
+
 
     /**
+     * 
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -83,7 +96,7 @@ class Property
      * @ORM\Column(type="boolean", options={"default": false})
      * @Assert\NotBlank(message="Mentionnez si c'est réservé ou libre pour les dates sélectionnées.")
      */
-    private $sold;
+    private $sold = false;
 
     /**
      * @ORM\Column(type="integer")
@@ -269,6 +282,11 @@ class Property
         return $this;
     }
 
+    public function getStatusType(): ?string
+    {
+    return self::STATUS[$this->status];
+    }
+
     public function getType(): ?int
     {
         return $this->type;
@@ -281,9 +299,19 @@ class Property
         return $this;
     }
 
+    public function getTypeType(): ?string
+    {
+    return self::TYPE[$this->type];
+    }
+
     public function getPrice(): ?int
     {
         return $this->price;
+    }
+    
+    public function getFormattedPrice(): string 
+    {
+        return number_format($this->price, 0, '',' ');
     }
 
     public function setPrice(int $price): self

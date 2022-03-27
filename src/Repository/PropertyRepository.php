@@ -7,6 +7,9 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Property|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,10 +24,45 @@ class PropertyRepository extends ServiceEntityRepository
         parent::__construct($registry, Property::class);
     }
 
+/**
+* @return Property[] Returns an array of Property objects
+ */
+
+     public function findAllVisible(): array
+    {
+        return $this->findVisibleQuery()
+                    ->orderBy('p.id', 'DESC')
+                    ->getQuery()
+                    ->getResult()
+        ;
+    }
+
+    /**
+* @return Property[] Returns an array of Property objects
+ */
+
+public function findLatesst(): array
+{
+    return $this->findVisibleQuery()
+                ->setMaxResults(3)
+                ->orderBy('p.id', 'DESC')
+                ->getQuery()
+                ->getResult()
+    ;
+}
+
+    private function findVisibleQuery():QueryBuilder
+{
+    return $this->createQueryBuilder('p')
+                ->where('p.sold = false')
+    ;
+}
+
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
+
     public function add(Property $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
