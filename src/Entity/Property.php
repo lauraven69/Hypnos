@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use App\Entity\Traits\Timestampable;
 use App\Repository\PropertyRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -142,6 +143,11 @@ class Property
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return (new Slugify())->slugify($this->title);
     }
 
     public function getText(): ?string
