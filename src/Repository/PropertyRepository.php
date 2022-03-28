@@ -24,11 +24,10 @@ class PropertyRepository extends ServiceEntityRepository
         parent::__construct($registry, Property::class);
     }
 
-/**
-* @return Property[] Returns an array of Property objects
- */
-
-     public function findAllVisible(): array
+    /**
+     * @return Property[] Returns an array of Property objects
+     */
+    public function findAllVisible(): array
     {
         return $this->findVisibleQuery()
                     ->orderBy('p.id', 'DESC')
@@ -38,49 +37,23 @@ class PropertyRepository extends ServiceEntityRepository
     }
 
     /**
-* @return Property[] Returns an array of Property objects
- */
-
-public function findLatesst(): array
-{
-    return $this->findVisibleQuery()
-                ->setMaxResults(3)
-                ->orderBy('p.id', 'DESC')
-                ->getQuery()
-                ->getResult()
-    ;
-}
-
-    private function findVisibleQuery():QueryBuilder
-{
-    return $this->createQueryBuilder('p')
-                ->where('p.sold = false')
-    ;
-}
-
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
+     * @return Property[] Returns an array of Property objects
      */
-
-    public function add(Property $entity, bool $flush = true): void
+    public function findLatesst(): array
     {
-        $this->_em->persist($entity);
-        if ($flush) {
-            $this->_em->flush();
-        }
+        return $this->findVisibleQuery()
+                    ->setMaxResults(4)
+                    ->orderBy('p.id', 'DESC')
+                    ->getQuery()
+                    ->getResult()
+        ;
     }
 
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
-    public function remove(Property $entity, bool $flush = true): void
+    private function findVisibleQuery(): QueryBuilder
     {
-        $this->_em->remove($entity);
-        if ($flush) {
-            $this->_em->flush();
-        }
+        return $this->createQueryBuilder('p')
+                    ->where('p.sold = false')
+        ;
     }
 
     // /**
