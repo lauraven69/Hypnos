@@ -1,0 +1,11 @@
+Utilisateur : ne voit que son établissement.   nom, prénom,mdp, role.
+
+* Administrateur : Créer, modifie et supprime un établissement. Il a la main sur les gérants.
+
+* Gérant s: Mettre un lien vers sa réservation booking.com. Peut ajouter une ou plusieurs suites.
+Prix tout le temps le même qu'importe la date.
+
+* Visiteurs : Chaque établissement à sa propre page web.
+
+* Visiteurs/Clients : Une page permettra de réserver une suite. 4 champs de formulaires: le choix de l'établissement, le choix de la suite,
+la date de début et de fin.
