@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Hypnos -{{ property.title}} {% endblock %}
+
+{% block body %}
+
+    <main id="main">
+        {# Intro single #}
+
+        {{ include('property/partials/_intro_single_show.html.twig') }}
+
+        </main>
+
+{% endblock %}

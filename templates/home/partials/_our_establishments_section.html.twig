@@ -1,0 +1,263 @@
+<section class="section-property section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Nos établissements</h2>
+            </div>
+            <div class="title-link">
+              <a href="{{ path('app_property') }}">Tout nos établissements
+                <span class="bi bi-chevron-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="property-carousel" class="swiper">
+        <div class="swiper-wrapper">
+            {% for property in properties %}
+          <div class="carousel-item-b swiper-slide">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+                  <img src="assets/img/property-1.jpg" alt="" class="img-a img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                  <div class="card-header-a">
+                    <h2 class="card-title-a">
+                      <a href="{{ path('app_property_show', {id: property.id, slug: property.slug}) }}">Hôtel Cassiopée - Lyon
+                        <br /> Suite présidentielle</a>
+                    </h2>
+                  </div>
+                  <div class="card-body-a">
+                    <div class="price-box d-flex">
+                      <span class="price-a">à partir de 5000 €</span>
+                    </div>
+                    <a href="{{ path('app_property_show', {id: property.id, slug:property.slug}) }}" 
+                    class="link-a">Cliquez pour en savoir plus
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </div>
+                  <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-around">
+                      <li>
+                        <h4 class="card-info-title">Surfaces</h4>
+                        <span>300m
+                          <sup>2</sup>
+                        </span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Pièces</h4>
+                        <span>6</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Salle de bain</h4>
+                        <span>3</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Parking</h4>
+                        <span>4</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End carousel item -->
+            {% endfor %}
+          <div class="carousel-item-b swiper-slide">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+                  <img src="assets/img/property-2.jpg" alt="" class="img-a img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                  <div class="card-header-a">
+                    <h2 class="card-title-a">
+                      <a href="property-single.html">Hôtel Sirius - Marseille
+                        <br /> Suite présidentielle</a>
+                    </h2>
+                  </div>
+                  <div class="card-body-a">
+                    <div class="price-box d-flex">
+                      <span class="price-a">partir de 5000 €</span>
+                    </div>
+                    <a href="{{ path('app_property') }}"
+                     class="link-a">Cliquez pour en savoir plus
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </div>
+                  <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-around">
+                      <li>
+                        <h4 class="card-info-title">Surface</h4>
+                        <span>300m
+                          <sup>2</sup>
+                        </span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Pièces</h4>
+                        <span>6</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Salle de bain</h4>
+                        <span>3</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Garages</h4>
+                        <span>4</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End carousel item -->
+          <div class="carousel-item-b swiper-slide">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+                <img src="assets/img/property-3.jpg" alt="" class="img-a img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                  <div class="card-header-a">
+                    <h2 class="card-title-a">
+                      <a href="property-single.html">Hôtel Capella - Paris
+                        <br /> Suite panoramique</a>
+                    </h2>
+                  </div>
+                  <div class="card-body-a">
+                    <div class="price-box d-flex">
+                      <span class="price-a">à partir de 2500€</span>
+                    </div>
+                    <a href="{{ path('app_property') }}" class="link-a">Cliquez pour en savoir plus
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </div>
+                  <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-around">
+                      <li>
+                        <h4 class="card-info-title">Surface</h4>
+                        <span>200m
+                          <sup>2</sup>
+                        </span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Pièces</h4>
+                        <span>5</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Salle de bains</h4>
+                        <span>2</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Garages</h4>
+                        <span>3</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End carousel item -->
+          <div class="carousel-item-b swiper-slide">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+                <img src="assets/img/property-4.jpg" alt="" class="img-a img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                  <div class="card-header-a">
+                    <h2 class="card-title-a">
+                      <a href="property-single.html">Hôtel Spica - Cannes
+                        <br /> Suite panoramique</a>
+                    </h2>
+                  </div>
+                  <div class="card-body-a">
+                    <div class="price-box d-flex">
+                      <span class="price-a">à partir de 2500€</span>
+                    </div>
+                    <a href="{{ path('app_property') }}" 
+                    class="link-a">Cliquez pour en savoir plus
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </div>
+                  <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-around">
+                      <li>
+                        <h4 class="card-info-title">Surface</h4>
+                        <span>200m
+                          <sup>2</sup>
+                        </span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Chambres</h4>
+                        <span>5</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Salle de bain</h4>
+                        <span>2</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Garages</h4>
+                        <span>3</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End carousel item -->
+          <div class="carousel-item-b swiper-slide">
+      <div class="card-box-a card-shadow">
+      <div class="img-box-a">
+    <img src="assets/img/property-10.jpg" alt="" class="img-a img-fluid">
+  </div>
+  <div class="card-overlay">
+    <div class="card-overlay-a-content">
+      <div class="card-header-a">
+        <h2 class="card-title-a">
+          <a href="{{ path('app_property') }}">Hôtel Andromede - Bordeaux
+            <br /> Suite classique</a>
+        </h2>
+      </div>
+      <div class="card-body-a">
+        <div class="price-box d-flex">
+          <span class="price-a">à partir de 2000€</span>
+        </div>
+        <a href="{{ path('app_property') }}" class="link-a">Cliquez pour en savoir plus
+          <span class="bi bi-chevron-right"></span>
+        </a>
+      </div>
+      <div class="card-footer-a">
+        <ul class="card-info d-flex justify-content-around">
+          <li>
+            <h4 class="card-info-title">Surface</h4>
+            <span>100
+              <sup>2</sup>
+            </span>
+          </li>
+          <li>
+            <h4 class="card-info-title">Chambres</h4>
+            <span>4</span>
+          </li>
+          <li>
+            <h4 class="card-info-title">Salle de bain</h4>
+            <span>1</span>
+          </li>
+          <li>
+            <h4 class="card-info-title">Garages</h4>
+            <span>1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        </div><!-- End carousel item -->
+      </div>
+      <div class="propery-carousel-pagination carousel-pagination"></div>
+    </div>
+</section>
