@@ -33,7 +33,7 @@ class SuiteClassiqueGerant
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=400)
      */
     private $image;
 

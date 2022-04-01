@@ -11,8 +11,7 @@ class EstablismentGerantCrudController extends AbstractCrudController
     {
         return EstablismentGerant::class;
     }
-
-    /*
+        /* 
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -22,4 +21,6 @@ class EstablismentGerantCrudController extends AbstractCrudController
         ];
     }
     */
+
+    
 }

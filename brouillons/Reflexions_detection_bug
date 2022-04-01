@@ -1,0 +1,5 @@
+01-04-22  15:51 L'injection des contraintes via use Symfony\Component\Validator\Constraints as Assert; ne fonctionne pas.
+Pour le dashboard Gerant
+A revoir
+---------------------------------------------------------------------------------------
+

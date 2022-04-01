@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\SuitePanoramiqueGerantRepository;
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * @ORM\Entity(repositoryClass=SuitePanoramiqueGerantRepository::class)
  */
@@ -28,12 +27,12 @@ class SuitePanoramiqueGerant
     private $description;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=2)
+     *@ORM\Column(type="decimal", precision=10, scale=2)
      */
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     *@ORM\Column(type="string", length=400)
      */
     private $image;
     

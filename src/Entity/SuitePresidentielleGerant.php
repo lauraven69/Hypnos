@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\SuitePresidentielleGerantRepository;
 use Doctrine\ORM\Mapping as ORM;
+/* Route pour les contraintes (avec @Assert). A repliquer sur les autres entity si cela marche */
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=SuitePresidentielleGerantRepository::class)
@@ -33,7 +35,7 @@ class SuitePresidentielleGerant
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=400)
      */
     private $image;
 

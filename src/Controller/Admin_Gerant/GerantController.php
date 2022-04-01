@@ -40,4 +40,5 @@ class GerantController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Suite Panoramique', 'fa fa-tags', SuitePanoramiqueGerant::class);
         yield MenuItem::linkToCrud('Suite Presidentielle', 'fa fa-tags', SuitePresidentielleGerant::class);
     }
+
 }
