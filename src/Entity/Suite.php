@@ -18,10 +18,15 @@ class Suite
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=gerant::class, inversedBy="suites")
+     * @ORM\ManyToOne(targetEntity=Gerant::class, inversedBy="suites")
      * @ORM\JoinColumn(nullable=false)
      */
     private $iserId;
+
+    public function __toString(): string
+    {
+        return (string) $this->getIserId();
+    }
 
     public function getId(): ?int
     {

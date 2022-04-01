@@ -42,10 +42,6 @@ class Gerant implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $fullname;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Gerant::class, mappedBy="userId", cascade={"persist", "remove"})
-     */
-    private $gerant;
 
     /**
      * @ORM\OneToOne(targetEntity=Establishment::class, mappedBy="iserId", cascade={"persist", "remove"})
@@ -60,6 +56,11 @@ class Gerant implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->suites = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->getEmail();
     }
 
     public function getId(): ?int
@@ -149,17 +150,15 @@ class Gerant implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->gerant;
     }
 
-    public function setGerant(self $gerant): self
-    {
-        // set the owning side of the relation if necessary
-        if ($gerant->getUserId() !== $this) {
-            $gerant->setUserId($this);
-        }
-
-        $this->gerant = $gerant;
-
-        return $this;
-    }
+     public function setGerant(self $gerant): self
+   {
+       // set the owning side of the relation if necessary
+       if ($gerant->getUserId() !== $this) {
+           $gerant->setUserId($this);
+       }
+       $this->gerant = $gerant;
+      return $this;
+   }
 
     public function getEstablishment(): ?Establishment
     {

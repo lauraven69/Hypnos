@@ -128,6 +128,12 @@ class Property
      */
     private $country;
 
+    public function __toString(): string
+    {
+        return (string) $this->getTitle();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

@@ -28,10 +28,15 @@ class Establishment
     private $suite;
 
     /**
-     * @ORM\OneToOne(targetEntity=gerant::class, inversedBy="establishment", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Gerant::class, inversedBy="establishment", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $iserId;
+
+    public function __toString(): string
+    {
+            return $this->title.' '.$this->suite;
+    }
 
     public function getId(): ?int
     {
