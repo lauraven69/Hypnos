@@ -1,0 +1,9 @@
+Hypnos (projet symfony)
+
+Utilisation:
+
+1) Telechargez le projet.
+2) Une fois telecharger, lancez le programme sur un editeur de code.
+3) Telechargez le bundle easyadmin, et npm run dev, ainsi que composer update.
+4)J'ai utilisé composer require --dev orm-fixtures pour l'ajout de fixtures. (uniquement sur la partie dev car pas besoin en prod).
+5)Allez dans le dossier .env pour modifier la root de votre base de donnée.
