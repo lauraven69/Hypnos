@@ -1,6 +1,13 @@
+------------BUG--------------------
+
 01-04-22  15:51 L'injection des contraintes via use Symfony\Component\Validator\Constraints as Assert; ne fonctionne pas.
 Pour le dashboard Gerant
 A revoir
+
+
+--------------OK--------------------
 ---------------------------------------------------------------------------------------
 01-04-22 16:05 ajout composer require --dev orm-fixtures
 ---------------------------------------------------------------------------------------
+03/04/22 13h35 composer require fakerphp/faker
+Qui va me permettre de générer des faux noms etc etc pour ma base de données.
