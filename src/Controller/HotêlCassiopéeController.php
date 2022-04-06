@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\SuiteClassiqueGerant;
+use App\Form\SuiteClassiqueType;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\SuiteClassiqueGerantRepository ;
@@ -11,8 +12,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HotêlCassiopéeController extends AbstractController
+
+/**
+ * Les fonctions pour les suites classiques
+ * param SuiteClassiqueGerantRepository $repository
+ * param PaginatorInterface $paginator
+ * param Request $request
+ * return Response
+ */
 {
-    #[Route('/hotelcassiopee', name: 'hotelcassiopee')]
+    #[Route('/hotelcassiopee', name: 'hotelcassiopee', methods: ['GET'])]
     public function index(SuiteClassiqueGerantRepository  $repository, PaginatorInterface $paginator,
     Request $request): Response
     {
@@ -23,8 +32,18 @@ class HotêlCassiopéeController extends AbstractController
         );
 
 
-        return $this->render('hotêl_cassiopée/index.html.twig', [
+        return $this->render('hotel_cassiopée/index.html.twig', [
             'suitesclassiques' =>$suitesclassiques
+        ]);
+    }
+
+    #[Route('/suitesclassiques/nouveau', 'suitesclassiques.new', methods: ['GET','POST'])]
+    public function new() : Response
+    {
+        $suitesclassiques = new SuiteClassiqueGerant();
+        $form = $this->createForm(SuiteClassiqueType::class, $suitesclassiques);
+        return $this->render('hotel_cassiopée/new.html.twig', [
+            'form' =>$form->CreateView()
         ]);
     }
 }

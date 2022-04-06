@@ -12,6 +12,9 @@ OUblie use App\Entity\SuiteClassiqueGerant ? (oui, bug résolu)
 SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null (bug résolu)
 
 
+06-04-22 quand j'ajoute {# contact#}
+{{ include('contact/index.html.twig') }} dans le home, l'appli bug +++
+
 --------------CE QUI EST OK--------------------
 
 ---------------------------------------------------------------------------------------
@@ -23,3 +26,5 @@ Qui va me permettre de générer des faux noms etc etc pour ma base de données.
 03/04/22 php bin/console doctrine:fixtures:load pour  remettre a zero ma bbd
 ---------------------------------------------------------------------------------------
 03/04/22 composer require knplabs/knp-paginator-bundle
+---------------------------------------------------------------------------------------
+03/04/22 php bin/console make:form
