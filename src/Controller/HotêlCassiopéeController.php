@@ -10,6 +10,7 @@ use App\Repository\SuiteClassiqueGerantRepository ;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\src\Controller\HôtelCassiopéeController;
 
 class HotêlCassiopéeController extends AbstractController
 

@@ -1,0 +1,51 @@
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReserveController!{% endblock %}
+
+{% block body %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>EstateAgency Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+<h1 class="h3 mb-3 font-weight-normal">Formulaire de réservation</h1>
+<p>Merci de bien vouloir renseigner la date de votre séjour, ainsi que:
+    <br>votre nom
+    <br>l'hôtel que vous désirez
+    <br>la suite désirez
+    <br>votre email
+
+     </p>
+
+ <!--formulaire--> 
+ <form method="post" target="_self">
+  <input type="date" name="date" placeholder="Date" required/>
+  <input type="text" name="name" placeholder="Nom" required/>
+  <input type="text" name="hotel" placeholder="Hôtel" required/>
+  <input type="text" name="suite" placeholder="Suite" required/>
+  <input type="email" name="email" placeholder="Votre email" required/>
+  <input type="submit" value="Go!" required/>        
+ </form>
+
+{% endblock %}
